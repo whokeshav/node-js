@@ -33,7 +33,7 @@ app.get('/', (req,res)=>
 });
 app.get('/about', (req,res)=> 
 {
-     res.render('about',{title:'about'});
+     res.render('about',{title:'About'});
 
 });
 
@@ -44,7 +44,7 @@ app.get('/about-us',(req,res)=>
     res.redirect('/about', {title:'about'});
 });
 // blog routes 
-app.use(blogRoutes());
+app.use('/blogs',blogRoutes);
 
 
 
@@ -54,3 +54,4 @@ app.use((req,res)=>
 {
     res.status(404).render('404',{title:'page not found '})
 })
+

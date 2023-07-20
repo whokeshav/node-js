@@ -1,6 +1,7 @@
 const express=require('express');
-const router=expres.Router();
+const router=express.Router();
 const Blog=require('../models/blog');
+const mongoose=require('mongoose');
 router.post('/', (req, res) => {
     const blog= new Blog(req.body);
   
@@ -62,3 +63,4 @@ router.post('/', (req, res) => {
       .catch(err=>{console.log(err);});
   })
   module.exports=router;
+  
